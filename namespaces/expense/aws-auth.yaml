@@ -9,7 +9,7 @@ data:
   mapUsers: |
     - groups:
       - expense-pod-reader-role
-      userarn: arn:aws:iam::111122223333:user/harish
+      userarn: arn:aws:iam::805778285734:user/harish
       username: harish
 
 kind: ConfigMap
