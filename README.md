@@ -148,7 +148,7 @@ To replace specific user arn, go to AWS IAM --> users-->harish --> get harish ar
 Now, Admin will email project team that namespace and access is given. Then
 
 The project team has their own server like expense servers like creating ec2 instance.
-Login into ec2-user  as harish user.
+Login into ec2-user as harish user.
 
 Harish wants to login AWS using 'aws configure'
 Access Key:
