@@ -28,34 +28,36 @@ roleRef:
  name: expense-pod-reader-role #this must match the name of the Role or ClusterRole you wish
  apiGroup: rbac.authorization.k8s.io
 
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-# 'namespace' omitted since ClusterRole are not namespaced
-  name: expense-cluster-reader-role
-rules:
-- apiGroups: [""]
-  #
-  # at the HTTP level, the name of the resource for accessing Secret
-  #objects in "secrets"
-  resources: ["secrets","persistentvolumes","nodes"]
-  verbs: ["get","watch","list"]
 
----
-apiVersion: rbac.authorization.k8s.io/v1
-#This cluster role binding allows anyone in the "manager" group to read secrets in any namespace
-kind: ClusterRoleBinding
-metadata:
-  name: expense-cluster-reader-rolebinding
-subjects:
-- kind: User
-  name: harish #Name is case sensitive
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: ClusterRole
-  name: expense-cluster-reader-role
-  apiGroup: rbac.authorization.k8s.io
+
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRole
+# metadata:
+# # 'namespace' omitted since ClusterRole are not namespaced
+#   name: expense-cluster-reader-role
+# rules:
+# - apiGroups: [""]
+#   #
+#   # at the HTTP level, the name of the resource for accessing Secret
+#   #objects in "secrets"
+#   resources: ["secrets","persistentvolumes","nodes"]
+#   verbs: ["get","watch","list"]
+
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# #This cluster role binding allows anyone in the "manager" group to read secrets in any namespace
+# kind: ClusterRoleBinding
+# metadata:
+#   name: expense-cluster-reader-rolebinding
+# subjects:
+# - kind: User
+#   name: harish #Name is case sensitive
+#   apiGroup: rbac.authorization.k8s.io
+# roleRef:
+#   kind: ClusterRole
+#   name: expense-cluster-reader-role
+#   apiGroup: rbac.authorization.k8s.io
 
 
 

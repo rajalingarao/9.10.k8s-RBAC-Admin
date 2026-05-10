@@ -1,20 +1,45 @@
 apiVersion: v1
 data:
   mapRoles: |
-    - groups:
+    - rolearn: arn:aws:iam::805778285734:role/eksctl-expense-nodegroup-spot-NodeInstanceRole-OtwR5mC2JSXm
+      groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::484907532817:role/eksctl-expense-nodegroup-spot-NodeInstanceRole-Of3wNCN2oza5
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
     - groups:
       - expense-pod-reader-role
-      userarn: arn:aws:iam::484907532817:user/harish
+      userarn: arn:aws:iam::111122223333:user/harish
       username: harish
 
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2025-07-06T18:45:14Z"
+  creationTimestamp: "2026-05-10T05:14:02Z"
   name: aws-auth
   namespace: kube-system
-  uid: e970012f-f767-4c95-b8e3-771de85a96c6
+  uid: f3e41ee4-46e0-4d8f-ae64-8ab3f9ed7d27
+
+
+
+
+
+# apiVersion: v1
+# data:
+#   mapRoles: |
+#     - groups:
+#       - system:bootstrappers
+#       - system:nodes
+#       rolearn: arn:aws:iam::484907532817:role/eksctl-expense-nodegroup-spot-NodeInstanceRole-Of3wNCN2oza5
+#       username: system:node:{{EC2PrivateDNSName}}
+#   mapUsers: |
+#     - groups:
+#       - expense-pod-reader-role
+#       userarn: arn:aws:iam::484907532817:user/harish
+#       username: harish
+
+# kind: ConfigMap
+# metadata:
+#   creationTimestamp: "2025-07-06T18:45:14Z"
+#   name: aws-auth
+#   namespace: kube-system
+#   uid: e970012f-f767-4c95-b8e3-771de85a96c6
